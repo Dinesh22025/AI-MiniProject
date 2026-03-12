@@ -1,0 +1,22 @@
+{
+  "name": "driver-ai-copilot",
+  "version": "1.0.0",
+  "description": "Driver AI Co-Pilot - Unified Full Stack Application",
+  "scripts": {
+    "dev": "npx concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python run.py",
+    "build": "cd frontend && npm run build",
+    "start": "npm run build && cd backend && python run.py",
+    "start:prod": "cd backend && python run.py",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "test:vision": "cd backend && python test_vision_fix.py",
+    "clean": "cd frontend && rmdir /s /q dist 2>nul || echo \"No dist folder to clean\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["react", "flask", "ai", "driver-monitoring", "unified"],
+  "author": "",
+  "license": "MIT"
+}
